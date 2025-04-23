@@ -23,33 +23,34 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
-```model.py
-from django.db import models
-from django.db import models
-from django.contrib import admin
-
-class Employee(models.Model):
-    eid = models.CharField(max_length=20, help_text="Employee ID")
-    name = models.CharField(max_length=100)
-    salary = models.IntegerField()
-    age = models.IntegerField()
-    email = models.EmailField()
-
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('eid', 'name', 'salary', 'age', 'email')
-
 ```
-```admin.py
+models.py
+
+from django.db import models
+from django.contrib import admin
+class Movie(models.Model):
+mid=models.IntegerField()
+    mname=models.CharField(max_length=100)
+    collection=models.IntegerField()
+    year=models.IntegerField()
+    rating=models.FloatField()
+
+class MovieAdmin(admin.ModelAdmin):
+    list_display=('mid','mname','collection','year','rating')
+
+
+admin.py
 
 from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+from .models import Movie,MovieAdmin
+admin.site.register(Movie,MovieAdmin)
 
 ```
 
 
 ## OUTPUT
-![alt text](<WEB EX 2.jpg>)
+
+![433035786-357c3740-d4d3-44cb-961a-f97df96f959c](https://github.com/user-attachments/assets/0b9adc82-7308-4dac-b103-d3b4b2724712)
 
 
 ## RESULT
